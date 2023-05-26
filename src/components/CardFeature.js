@@ -29,7 +29,8 @@ const CardFeature = ({ image, name, price, category, loading, id, showButton, sh
     }
 
     const handeRemoveProduct = () => {
-        axios.delete(`${process.env.REACT_APP_SERVER_DOMAIN}removeProduct`, { id })
+        const data = { id }
+        axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}removeProduct`, { data })
             .then(res => {
                 toast(res.data.message)
                 setTimeout(() => {

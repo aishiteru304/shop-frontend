@@ -29,7 +29,7 @@ const CartProduct = ({ idProduct, name, image, category, price, onChangeAmount, 
 
     const handleDelete = () => {
         const data = { email: userData.email, idProduct }
-        axios.delete(`${process.env.REACT_APP_SERVER_DOMAIN}removeToCart`, { data })
+        axios.put(`${process.env.REACT_APP_SERVER_DOMAIN}removeToCart`, { data })
             .then(res => {
                 toast(res.data.message)
 
